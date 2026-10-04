@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Beauty Tips | GlowGuide</title>
+
+    <meta name="description"
+        content="Discover simple skincare, haircare and everyday beauty tips with GlowGuide.">
+
+    <style>
+
+        /* ---------- BASIC ---------- */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fff8fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* ---------- NAVBAR ---------- */
+
+        nav {
+            width: 100%;
+            background: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #c85b78;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #444;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: #c85b78;
+        }
+
+
+        /* ---------- PAGE HEADER ---------- */
+
+        .page-header {
+            background: linear-gradient(
+                rgba(255, 225, 234, 0.9),
+                rgba(255, 247, 250, 0.95)
+            );
+
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .page-header h1 {
+            font-size: 48px;
+            color: #b94e6b;
+            margin-bottom: 15px;
+        }
+
+        .page-header p {
+            font-size: 18px;
+            color: #666;
+            max-width: 650px;
+            margin: auto;
+        }
+
+
+        /* ---------- TIPS SECTION ---------- */
+
+        .tips-section {
+            padding: 70px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 34px;
+            color: #b94e6b;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #777;
+        }
+
+
+        /* ---------- TIP CARDS ---------- */
+
+        .tips-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .tip-card {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+            transition: 0.3s;
+        }
+
+        .tip-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .tip-icon {
+            width: 65px;
+            height: 65px;
+            background: #ffe5ec;
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .tip-card h3 {
+            color: #b94e6b;
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .tip-card p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .tip-card ul {
+            padding-left: 20px;
+            color: #555;
+        }
+
+        .tip-card li {
+            margin-bottom: 8px;
+        }
+
+
+        /* ---------- FEATURED TIP ---------- */
+
+        .featured {
+            background: #fff0f4;
+            padding: 70px 8%;
+        }
+
+        .featured-box {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .featured-box h2 {
+            color: #b94e6b;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .featured-box p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .tip-button {
+            display: inline-block;
+            background: #c85b78;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .tip-button:hover {
+            background: #a94260;
+            transform: translateY(-3px);
+        }
+
+
+        /* ---------- FOOTER ---------- */
+
+        footer {
+            background: #2f2528;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        footer span {
+            color: #f4a6b9;
+        }
+
+
+        /* ---------- MOBILE ---------- */
+
+        @media (max-width: 768px) {
+
+            nav {
+                padding: 15px 5%;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .page-header h1 {
+                font-size: 38px;
+            }
+
+            .tips-container {
+                grid-template-columns: 1fr;
+            }
+
+            .tips-section,
+            .featured {
+                padding: 55px 5%;
+            }
+
+            .featured-box {
+                padding: 25px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav>
+
+        <div class="logo">
+            GlowGuide ✨
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="tips.html" class="active">
+                Tips
+            </a>
+
+            <a href="routine.html">
+                Routine
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= PAGE HEADER ================= -->
+
+    <section class="page-header">
+
+        <h1>
+            Beauty Tips 🌸
+        </h1>
+
+        <p>
+            Simple and practical beauty tips for
+            skincare, haircare and everyday self-care.
+        </p>
+
+    </section>
+
+
+    <!-- ================= TIPS ================= -->
+
+    <section class="tips-section">
+
+        <div class="section-title">
+
+            <h2>
+                Explore Our Tips
+            </h2>
+
+            <p>
+                Easy ideas that you can add to your daily routine.
+            </p>
+
+        </div>
+
+
+        <div class="tips-container">
+
+
+            <!-- TIP 1 -->
+
+            <div class="tip-card">
+
+                <div class="tip-icon">
+                    🌸
+                </div>
+
+                <h3>
+                    Skincare Tips
+                </h3>
+
+                <p>
+                    Build simple skincare habits that
+                    are easy to follow every day.
+                </p>
+
+                <ul>
+
+                    <li>Keep your face clean</li>
+
+                    <li>Use moisturizer</li>
+
+                    <li>Protect your skin from the sun</li>
+
+                    <li>Stay hydrated</li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- TIP 2 -->
+
+            <div class="tip-card">
+
+                <div class="tip-icon">
+                    ✨
+                </div>
+
+                <h3>
+                    Hair Care Tips
+                </h3>
+
+                <p>
+                    Follow simple habits to take
+                    better care of your hair.
+                </p>
+
+                <ul>
+
+                    <li>Keep your scalp clean</li>
+
+                    <li>Handle hair gently</li>
+
+                    <li>Avoid excessive heat</li>
+
+                    <li>Maintain a regular routine</li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- TIP 3 -->
+
+            <div class="tip-card">
+
+                <div class="tip-icon">
+                    💖
+                </div>
+
+                <h3>
+                    Daily Beauty Tips
+                </h3>
+
+                <p>
+                    Small daily habits can make your
+                    self-care routine easier.
+                </p>
+
+                <ul>
+
+                    <li>Get enough sleep</li>
+
+                    <li>Keep yourself hydrated</li>
+
+                    <li>Maintain good hygiene</li>
+
+                    <li>Follow a simple routine</li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- TIP 4 -->
+
+            <div class="tip-card">
+
+                <div class="tip-icon">
+                    ☀️
+                </div>
+
+                <h3>
+                    Summer Care
+                </h3>
+
+                <p>
+                    Simple ways to make your beauty
+                    routine comfortable during summer.
+                </p>
+
+                <ul>
+
+                    <li>Stay hydrated</li>
+
+                    <li>Use sun protection</li>
+
+                    <li>Choose comfortable clothing</li>
+
+                    <li>Keep your skin clean</li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- TIP 5 -->
+
+            <div class="tip-card">
+
+                <div class="tip-icon">
+                    🌙
+                </div>
+
+                <h3>
+                    Night Care
+                </h3>
+
+                <p>
+                    Create a simple evening routine
+                    before going to bed.
+                </p>
+
+                <ul>
+
+                    <li>Clean your face</li>
+
+                    <li>Remove makeup if used</li>
+
+                    <li>Moisturize</li>
+
+                    <li>Get enough sleep</li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- TIP 6 -->
+
+            <div class="tip-card">
+
+                <div class="tip-icon">
+                    💧
+                </div>
+
+                <h3>
+                    Hydration Tips
+                </h3>
+
+                <p>
+                    Staying hydrated is an important
+                    part of everyday self-care.
+                </p>
+
+                <ul>
+
+                    <li>Drink water regularly</li>
+
+                    <li>Eat water-rich foods</li>
+
+                    <li>Carry a water bottle</li>
+
+                    <li>Stay consistent</li>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FEATURED TIP ================= -->
+
+    <section class="featured">
+
+        <div class="featured-box">
+
+            <h2>
+                ✨ Start With Simple Habits
+            </h2>
+
+            <p>
+                You don't need a complicated routine.
+                Start with a few simple habits and
+                stay consistent with them.
+            </p>
+
+            <a href="routine.html" class="tip-button">
+                View Daily Routine
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 <span>GlowGuide</span>
+        </p>
+
+        <p>
+            Simple Beauty & Skincare Guide
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

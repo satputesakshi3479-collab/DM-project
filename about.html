@@ -1,0 +1,751 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Us | GlowGuide</title>
+
+    <meta name="description"
+        content="Learn more about GlowGuide, a simple beauty and skincare guide for everyday self-care.">
+
+    <style>
+
+        /* ================= BASIC ================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fff8fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            width: 100%;
+            background: white;
+            padding: 18px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+        }
+
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #c85b78;
+        }
+
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+
+        .nav-links a {
+            color: #444;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: #c85b78;
+        }
+
+
+        /* ================= PAGE HEADER ================= */
+
+        .page-header {
+            background: linear-gradient(
+                rgba(255, 225, 234, 0.9),
+                rgba(255, 247, 250, 0.95)
+            );
+
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+
+        .page-header h1 {
+            font-size: 48px;
+            color: #b94e6b;
+            margin-bottom: 15px;
+        }
+
+
+        .page-header p {
+            font-size: 18px;
+            color: #666;
+
+            max-width: 700px;
+            margin: auto;
+        }
+
+
+        /* ================= ABOUT INTRO ================= */
+
+        .about-section {
+            padding: 70px 8%;
+        }
+
+
+        .about-container {
+            max-width: 950px;
+            margin: auto;
+
+            background: white;
+
+            padding: 45px;
+
+            border-radius: 20px;
+
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+        }
+
+
+        .about-container h2 {
+            color: #b94e6b;
+            font-size: 32px;
+            margin-bottom: 18px;
+        }
+
+
+        .about-container p {
+            color: #666;
+            font-size: 17px;
+            margin-bottom: 18px;
+        }
+
+
+        /* ================= MISSION ================= */
+
+        .mission {
+            background: #fff0f4;
+            padding: 70px 8%;
+        }
+
+
+        .mission-container {
+            max-width: 950px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+
+        .mission-card {
+            background: white;
+            padding: 35px;
+
+            border-radius: 18px;
+
+            text-align: center;
+
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+
+            transition: 0.3s;
+        }
+
+
+        .mission-card:hover {
+            transform: translateY(-7px);
+        }
+
+
+        .mission-icon {
+            width: 70px;
+            height: 70px;
+
+            background: #ffe5ec;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 32px;
+
+            margin: 0 auto 20px;
+        }
+
+
+        .mission-card h3 {
+            color: #b94e6b;
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+
+        .mission-card p {
+            color: #666;
+        }
+
+
+        /* ================= WHAT WE OFFER ================= */
+
+        .offer {
+            padding: 70px 8%;
+        }
+
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+
+        .section-title h2 {
+            color: #b94e6b;
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+
+        .section-title p {
+            color: #777;
+        }
+
+
+        .offer-container {
+            max-width: 1000px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+
+        .offer-card {
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 18px;
+
+            text-align: center;
+
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+
+            transition: 0.3s;
+        }
+
+
+        .offer-card:hover {
+            transform: translateY(-7px);
+        }
+
+
+        .offer-card .icon {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+
+        .offer-card h3 {
+            color: #b94e6b;
+            margin-bottom: 10px;
+        }
+
+
+        .offer-card p {
+            color: #666;
+            font-size: 15px;
+        }
+
+
+        /* ================= WHY GLOWGUIDE ================= */
+
+        .why {
+            background: #fff0f4;
+            padding: 70px 8%;
+        }
+
+
+        .why-container {
+            max-width: 850px;
+            margin: auto;
+
+            background: white;
+
+            padding: 40px;
+
+            border-radius: 20px;
+
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+        }
+
+
+        .why-container h2 {
+            text-align: center;
+            color: #b94e6b;
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+
+
+        .why-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+
+        .why-item {
+            background: #fff8fa;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+
+        .why-item strong {
+            color: #c85b78;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+
+        .why-item p {
+            color: #666;
+            font-size: 14px;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #2f2528;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+
+        footer p {
+            margin: 5px;
+        }
+
+
+        footer span {
+            color: #f4a6b9;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 768px) {
+
+            nav {
+                padding: 15px 5%;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+
+            .page-header h1 {
+                font-size: 38px;
+            }
+
+
+            .about-section,
+            .mission,
+            .offer,
+            .why {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+
+            .about-container {
+                padding: 28px;
+            }
+
+
+            .mission-container {
+                grid-template-columns: 1fr;
+            }
+
+
+            .offer-container {
+                grid-template-columns: 1fr;
+            }
+
+
+            .why-list {
+                grid-template-columns: 1fr;
+            }
+
+
+            .why-container {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav>
+
+        <div class="logo">
+            GlowGuide ✨
+        </div>
+
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="tips.html">
+                Tips
+            </a>
+
+            <a href="routine.html">
+                Routine
+            </a>
+
+            <a href="about.html" class="active">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= PAGE HEADER ================= -->
+
+    <section class="page-header">
+
+        <h1>
+            About GlowGuide 🌸
+        </h1>
+
+        <p>
+            Simple beauty information designed to make
+            everyday self-care easier to understand.
+        </p>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="about-section">
+
+        <div class="about-container">
+
+            <h2>
+                What is GlowGuide?
+            </h2>
+
+            <p>
+                GlowGuide is a simple beauty and self-care
+                blog created to provide easy-to-understand
+                information about skincare, haircare and
+                everyday beauty routines.
+            </p>
+
+            <p>
+                The website focuses on simple ideas that can
+                be easily understood and included in everyday
+                life. Instead of complicated routines, GlowGuide
+                encourages learning the basics and building
+                consistent habits.
+            </p>
+
+            <p>
+                Our goal is to make beauty information simple,
+                organized and beginner-friendly.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MISSION ================= -->
+
+    <section class="mission">
+
+        <div class="mission-container">
+
+
+            <!-- CARD 1 -->
+
+            <div class="mission-card">
+
+                <div class="mission-icon">
+                    🎯
+                </div>
+
+                <h3>
+                    Our Mission
+                </h3>
+
+                <p>
+                    To provide simple and useful beauty
+                    information that beginners can easily
+                    understand and follow.
+                </p>
+
+            </div>
+
+
+            <!-- CARD 2 -->
+
+            <div class="mission-card">
+
+                <div class="mission-icon">
+                    💖
+                </div>
+
+                <h3>
+                    Our Goal
+                </h3>
+
+                <p>
+                    To encourage simple, consistent and
+                    practical self-care habits for everyday life.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= WHAT WE OFFER ================= -->
+
+    <section class="offer">
+
+        <div class="section-title">
+
+            <h2>
+                What We Offer
+            </h2>
+
+            <p>
+                Explore different types of content available
+                on GlowGuide.
+            </p>
+
+        </div>
+
+
+        <div class="offer-container">
+
+
+            <!-- OFFER 1 -->
+
+            <div class="offer-card">
+
+                <div class="icon">
+                    🌸
+                </div>
+
+                <h3>
+                    Skincare Tips
+                </h3>
+
+                <p>
+                    Simple information about everyday
+                    skincare habits and routines.
+                </p>
+
+            </div>
+
+
+            <!-- OFFER 2 -->
+
+            <div class="offer-card">
+
+                <div class="icon">
+                    ✨
+                </div>
+
+                <h3>
+                    Haircare Tips
+                </h3>
+
+                <p>
+                    Easy-to-understand ideas for
+                    maintaining a simple haircare routine.
+                </p>
+
+            </div>
+
+
+            <!-- OFFER 3 -->
+
+            <div class="offer-card">
+
+                <div class="icon">
+                    💖
+                </div>
+
+                <h3>
+                    Beauty Routines
+                </h3>
+
+                <p>
+                    Beginner-friendly routines that
+                    help organize everyday self-care.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= WHY GLOWGUIDE ================= -->
+
+    <section class="why">
+
+        <div class="why-container">
+
+            <h2>
+                Why Choose GlowGuide?
+            </h2>
+
+
+            <div class="why-list">
+
+
+                <div class="why-item">
+
+                    <strong>
+                        🌸 Simple
+                    </strong>
+
+                    <p>
+                        Information is presented in an
+                        easy-to-understand way.
+                    </p>
+
+                </div>
+
+
+                <div class="why-item">
+
+                    <strong>
+                        ✨ Beginner Friendly
+                    </strong>
+
+                    <p>
+                        Content is designed for people
+                        who are starting their beauty journey.
+                    </p>
+
+                </div>
+
+
+                <div class="why-item">
+
+                    <strong>
+                        📚 Organized
+                    </strong>
+
+                    <p>
+                        Tips and routines are organized
+                        into easy-to-find sections.
+                    </p>
+
+                </div>
+
+
+                <div class="why-item">
+
+                    <strong>
+                        💖 Practical
+                    </strong>
+
+                    <p>
+                        The focus is on simple habits
+                        that can fit into everyday life.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 <span>GlowGuide</span>
+        </p>
+
+        <p>
+            Simple Beauty & Skincare Guide
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
+```
